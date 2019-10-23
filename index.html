@@ -3,8 +3,121 @@
   <head>
     <meta charset="utf-8">
     <title>Elflein - Formular</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="main.min.css"/>
   </head>
   <body>
-    <h1>Willkommen zu Elflein Formularsystem</h1>
+    <div class="container border">
+      <h1>Willkommen zu Elflein Formularsystem</h1>
+      <h2>Installation PC Form</h2>
+      <p>Wählen  Sie bitte, ob Sie entweder einen neuen PC Installation oder eine Wiederverwendung dürchgefuhrt möchten.</p>
+    </div>
+    <div class="container border mt-2 rounded">
+      <h4 class="mt-3">1. Schritt: Füllen Sie die folgenden Formularfelder aus und klicken Sie dann auf die Schaltfläche "Weiter"</h4>
+      <form class="mx-auto needs-validation" novalidate>
+        <div class="form-row">
+          <!-- 1.- Choose the location of the new pc. -->
+          <div class="col-md-3 mb-3 mt-3">
+            <label for="location">Ort:</label>
+            <select class="custom-select" id="locationSelect" required>
+              <option value="">Wählen...</option>
+              <option value="BAMC">Bamberg</option>
+              <option value="BERC">Berbersdorf</option>
+              <option value="BORC">Bor</option>
+              <option value="CHOC">Chomutov</option>
+              <option value="EPFC">Epfendorf</option>
+              <option value="HERC">Hermsdorf</option>
+              <option value="KIRC">Kirchdorf</option>
+              <option value="LEGC">Legniza</option>
+              <option value="LEIC">Leipzig</option>
+              <option value="LEPC">Leipzig Porsche</option>
+              <option value="NYRC">Nyrang</option>
+              <option value="OELC">Oelsnitz</option>
+              <option value="REGC">Regensburg</option>
+              <option value="BOBC">Böblingen</option>
+            </select>
+            <div class="invalid-feedback">Bitte wählen Sie aus, an welchem Ort dieser Pc belegt werden soll.</div>
+            <small class="form-text text-muted mt-3">Schreiben Sie den Namen, den der Computer im Netzwerk haben wird.</small>
+          </div>
+          <div class="col-md-0.5 mb-3 mt-3">
+          </div>
+          <!-- 2.- Write the name that the computer will have on the network. -->
+          <div class="col-md-3 mb-3 mt-3">
+            <label for="exampleInputPassword1">PC-Name:</label>
+            <div class="form-group row">
+              <span for="colFormLabel" class="col-md-2 col-form-label" id="pcNameDisplay"></span>
+              <div class="col-md-10">
+                <input type="text" class="form-control" id="colFormLabel" placeholder="0000" required>
+                <div class="invalid-feedback">Bitte geben Sie den Namen des PCs ein.</div>
+              </div>
+            </div>
+            <small class="form-text text-muted">Schreiben Sie den Namen, den der Computer im Netzwerk haben wird.</small>
+          </div>
+          <div class="col-md-0.5 mb-3 mt-3">
+          </div>
+          <!-- 3.- Write the Name of the User, if you know who is it. -->
+          <div class="form-group form-check col-md-5 mb-3 mt-3">
+            <label for="employee">Benutzername:</label>
+            <div class="form-group row">
+              <div class="col-md-8">
+                <input type="text" class="form-control usrNameField" disabled="disabled" required/>
+                <div class="invalid-feedback">Bitte geben Sie den Namen des Benutzers ein.</div>
+              </div>
+              <div class="col-md-4">
+                <small>Kennen Sie den Name vom Benutzer?</small> <input type="checkbox" id="test">
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="customSwitch1">
+          <label class="custom-control-label" for="customSwitch1">Toggle this switch element</label>
+        </div>
+        -->
+        <button type="submit" class="btn btn-primary mb-3">Weiter</button>
+      </form>
+    </div>
   </body>
+  <!-- Scripts, Bootstrap and jQuery-->
+  <script type="text/javascript" src="lib/jquery/jquery-3.4.1.js"></script>
+  <script type="text/javascript" src="lib/jquery/jquery-3.4.1.min.js"></script>
+
+  <script type="text/javascript">
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+
+    $('#test').click(function () {
+      var checked = this.checked;
+      console.log(checked);
+      $('.usrNameField').each(function () {
+          $(this).prop('disabled', !checked);
+      });
+    });
+
+    function notEmpty(){
+      var selected_location = document.getElementById("locationSelect");
+      var strUser = selected_location.options[selected_location.selectedIndex].value;
+      document.getElementById("pcNameDisplay").innerHTML = strUser;
+    }
+    notEmpty()
+      document.getElementById("locationSelect").onchange = notEmpty;
+  </script>
+
 </html>
