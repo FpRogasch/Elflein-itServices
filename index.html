@@ -49,11 +49,11 @@
             <div class="form-group row">
               <span for="colFormLabel" class="col-md-2 col-form-label" id="pcNameDisplay"></span>
               <div class="col-md-10">
-                <input type="text" class="form-control" id="colFormLabel" placeholder="0000" required>
-                <div class="invalid-feedback">Bitte geben Sie den Namen des PCs ein.</div>
+                <input type="text" class="form-control" id="colFormLabel" placeholder="0000" required pattern="[0-9]{4}">
+                <div class="invalid-feedback">Bitte geben Sie den Namen des PCs ein (4 Ziffern sind benötigt).</div>
               </div>
             </div>
-            <small class="form-text text-muted">Schreiben Sie den Namen, den der Computer im Netzwerk haben wird.</small>
+            <small class="form-text text-muted">Schreiben Sie den Namen, den der Computer im Netzwerk haben wird (Es werden 4 Ziffern benötigt).</small>
           </div>
           <div class="col-md-0.5 mb-3 mt-3">
           </div>
@@ -66,7 +66,7 @@
                 <div class="invalid-feedback">Bitte geben Sie den Namen des Benutzers ein.</div>
               </div>
               <div class="col-md-4">
-                <small>Kennen Sie den Name vom Benutzer?</small> <input type="checkbox" id="test">
+                <small>Kennen Sie den Name vom Benutzer?</small> <input type="checkbox" id="benutzerName">
               </div>
             </div>
           </div>
@@ -127,6 +127,15 @@
           <span>7.- Install LIS (Bamberg only)</span>
         </div>
       </div>
+      <div class="card mb-2">
+        <div class="card-header">
+          <span>8.- Install ESTOS ProCall 6</span>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item ml-5">Configured</li>
+          <li class="list-group-item ml-5">Übernehmen</li>
+        </ul>
+      </div>
     </div>
 
     <div class="container border rounded mt-2">
@@ -184,7 +193,7 @@
       }, false);
     })();
 
-    $('#test').click(function () {
+    $('#benutzerName').click(function () {
       var checked = this.checked;
       console.log(checked);
       $('.usrNameField').each(function () {
