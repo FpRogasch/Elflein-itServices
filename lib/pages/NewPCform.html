@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Elflein - Formular</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../main.min.css"/>
+  </head>
+  <body>
+    <div class="container border">
+      <h1>Willkommen zu Elflein Formularsystem</h1>
+      <h2>Installation PC Form</h2>
+      <p>Wählen  Sie bitte, ob Sie entweder einen neuen PC Installation oder eine Wiederverwendung dürchgefuhrt möchten.</p>
+    </div>
+    <div class="container border mt-2 rounded">
+      <h4 class="mt-3">1. Schritt: Füllen Sie die folgenden Formularfelder aus und klicken Sie dann auf die Schaltfläche "Weiter"</h4>
+      <form action="conectiontest.php" method="post" class="mx-auto needs-validation" novalidate>
+        <div class="form-row">
+          <!-- 1.- Choose the location of the new pc. -->
+          <div class="col-md-3 mb-3 mt-3">
+            <label for="Location">Ort:</label>
+            <select name="Location" class="custom-select" id="locationSelect" required>
+              <option value="">Wählen...</option>
+              <option value="BAMC">Bamberg</option>
+              <option value="BERC">Berbersdorf</option>
+              <option value="BORC">Bor</option>
+              <option value="CHOC">Chomutov</option>
+              <option value="EPFC">Epfendorf</option>
+              <option value="HERC">Hermsdorf</option>
+              <option value="KIRC">Kirchdorf</option>
+              <option value="LEGC">Legniza</option>
+              <option value="LEIC">Leipzig</option>
+              <option value="LEPC">Leipzig Porsche</option>
+              <option value="NYRC">Nyrang</option>
+              <option value="OELC">Oelsnitz</option>
+              <option value="REGC">Regensburg</option>
+              <option value="BOBC">Böblingen</option>
+            </select>
+            <div class="invalid-feedback">Bitte wählen Sie aus, an welchem Ort dieser Pc belegt werden soll.</div>
+            <small class="form-text text-muted mt-3">Schreiben Sie den Namen, den der Computer im Netzwerk haben wird.</small>
+          </div>
+          <div class="col-md-0.5 mb-3 mt-3">
+          </div>
+          <!-- 2.- Write the name that the computer will have on the network. -->
+          <div class="col-md-3 mb-3 mt-3">
+            <label for="name">PC-Name:</label>
+            <div class="form-group row">
+              <span for="colFormLabel" class="col-md-2 col-form-label" id="pcNameDisplay"></span>
+              <div class="col-md-10">
+                <input type="text" name="Name" class="form-control" id="colFormLabel" placeholder="0000" required pattern="[0-9]{4}">
+                <div class="invalid-feedback">Bitte geben Sie den Namen des PCs ein (4 Ziffern sind benötigt).</div>
+              </div>
+            </div>
+            <small class="form-text text-muted">Schreiben Sie den Namen, den der Computer im Netzwerk haben wird (Es werden 4 Ziffern benötigt).</small>
+          </div>
+          <div class="col-md-0.5 mb-3 mt-3">
+          </div>
+          <!-- 3.- Write the Name of the User, if you know who is it. -->
+          <div class="form-group form-check col-md-5 mb-3 mt-3">
+            <label for="employee">Benutzername:</label>
+            <div class="form-group row">
+              <div class="col-md-8">
+                <input type="text" name="employee" class="form-control usrNameField" disabled="disabled" required/>
+                <div class="invalid-feedback">Bitte geben Sie den Namen des Benutzers ein.</div>
+              </div>
+              <div class="col-md-4">
+                <small>Kennen Sie den Name vom Benutzer?</small><input type="checkbox" id="benutzerName">
+              </div>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary mb-3">Weiter</button>
+      </form>
+    </div>
+
+    <div class="container border rounded mt-2">
+      <div class="card mt-2 mb-2">
+        <div class="card-header">
+          <span>1.- Installing Windows with the USB</span>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item ml-5">Delete all partitions exept recovery</li>
+          <li class="list-group-item ml-5">Join local (Name: admin | PW: Keller)</li>
+          <li class="list-group-item ml-5">Starting Windows Updates (Einstellungen - Updates und Sicherheit)</li>
+          <li class="list-group-item ml-5">Register User in Domain "elfleinsped.local"</li>
+        </ul>
+      </div>
+      <div class="card mb-2">
+        <div class="card-header">
+          <span>2.- Move to right group in Active Directory</span>
+        </div>
+      </div>
+      <div class="card mb-2">
+        <div class="card-header">
+          <span>3.- Move to right group in WSUS</span>
+        </div>
+      </div>
+      <div class="card mb-2">
+        <div class="card-header">
+          <span>4.- Move to right group in ESET</span>
+        </div>
+      </div>
+      <div class="card mb-2">
+        <div class="card-header">
+          <span>5.- Grundinstallation with PDQ</span>
+        </div>
+      </div>
+      <div class="card mb-2">
+        <div class="card-header">
+          <span>6.- Install TeamViewer</span>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item ml-5">Renamed in TeamViewer</li>
+          <li class="list-group-item ml-5">Check</li>
+        </ul>
+      </div>
+      <div class="card mb-2">
+        <div class="card-header">
+          <span>7.- Install LIS (Bamberg only)</span>
+        </div>
+      </div>
+      <div class="card mb-2">
+        <div class="card-header">
+          <span>8.- Install ESTOS ProCall 6</span>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item ml-5">Configured</li>
+          <li class="list-group-item ml-5">Übernehmen</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container border rounded mt-2">
+      <h4 class="mt-3">2. Schritt: Löschen oder ergänzen Sie die für die Installation erforderlichen Zusatzprogramme.</h4>
+      <div class="table-wrapper mt-5">
+        <div class="table-title">
+          <div class="row">
+            <div class="col-sm-8"><h5><b>Zusätzliche</b> Programme.</h5></div>
+            <div class="col-sm-4">
+                <button type="button" class="btn btn-info btn-sm add-new"><i class="fa fa-plus"></i> Add New</button>
+            </div>
+          </div>
+        </div>
+        <table class="table m-2">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>John Doe</td>
+              <td>
+                <a class="add" title="Add" data-toggle="tooltip"><i class="fas fa-plus-square"></i></a>
+                <a class="edit" title="Edit" data-toggle="tooltip"><i class="fas fa-edit"></i></a>
+                <a class="delete" title="Delete" data-toggle="tooltip"><i class="fas fa-trash-alt"></i></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+  <!-- Scripts, Bootstrap and jQuery-->
+  <script type="text/javascript" src="lib/jquery/jquery-3.4.1.js"></script>
+  <script type="text/javascript" src="lib/jquery/jquery-3.4.1.min.js"></script>
+
+  <script type="text/javascript">
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+
+    $('#benutzerName').click(function () {
+      var checked = this.checked;
+      console.log(checked);
+      $('.usrNameField').each(function () {
+          $(this).prop('disabled', !checked);
+      });
+    });
+
+    function notEmpty(){
+      var selected_location = document.getElementById("locationSelect");
+      var strUser = selected_location.options[selected_location.selectedIndex].value;
+      document.getElementById("pcNameDisplay").innerHTML = strUser;
+    }
+    notEmpty()
+      document.getElementById("locationSelect").onchange = notEmpty;
+
+  $(document).ready(function(){
+  	$('[data-toggle="tooltip"]').tooltip();
+  	var actions = $("table td:last-child").html();
+  	// Append table with add row form on add new button click
+      $(".add-new").click(function(){
+  		$(this).attr("disabled", "disabled");
+  		var index = $("table tbody tr:last-child").index();
+          var row = '<tr>' +
+              '<td><input type="text" class="form-control" name="name" id="name"></td>' +
+              '<td><input type="text" class="form-control" name="department" id="department"></td>' +
+              '<td><input type="text" class="form-control" name="phone" id="phone"></td>' +
+  			'<td>' + actions + '</td>' +
+          '</tr>';
+      	$("table").append(row);
+  		$("table tbody tr").eq(index + 1).find(".add, .edit").toggle();
+          $('[data-toggle="tooltip"]').tooltip();
+      });
+  	// Add row on add button click
+  	$(document).on("click", ".add", function(){
+  		var empty = false;
+  		var input = $(this).parents("tr").find('input[type="text"]');
+          input.each(function(){
+  			if(!$(this).val()){
+  				$(this).addClass("error");
+  				empty = true;
+  			} else{
+                  $(this).removeClass("error");
+              }
+  		});
+  		$(this).parents("tr").find(".error").first().focus();
+  		if(!empty){
+  			input.each(function(){
+  				$(this).parent("td").html($(this).val());
+  			});
+  			$(this).parents("tr").find(".add, .edit").toggle();
+  			$(".add-new").removeAttr("disabled");
+  		}
+      });
+  	// Edit row on edit button click
+  	$(document).on("click", ".edit", function(){
+          $(this).parents("tr").find("td:not(:last-child)").each(function(){
+  			$(this).html('<input type="text" class="form-control" value="' + $(this).text() + '">');
+  		});
+  		$(this).parents("tr").find(".add, .edit").toggle();
+  		$(".add-new").attr("disabled", "disabled");
+      });
+  	// Delete row on delete button click
+  	$(document).on("click", ".delete", function(){
+          $(this).parents("tr").remove();
+  		$(".add-new").removeAttr("disabled");
+      });
+  });
+  </script>
+
+</html>
