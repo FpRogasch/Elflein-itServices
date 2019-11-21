@@ -1,7 +1,71 @@
 @import "lib/bootstrap/scss/bootstrap.css";
 @import "lib/bootstrap/scss/bootstrap.scss";
 
+$orange-color: #ec7813;
+$green-color: #006052;
+
+@font-face {
+  font-family: "Eurostile LT W04 Bold E1459110";
+  src: url(https://www.elflein.de/typo3conf/ext/cbf_template/Resources/Public/Frontend/assets/fonts/eurostile-bold-extended/eurostile-bold-extended.woff);
+}
+
+@font-face {
+  font-family: "Univers LT W04_45 Light1475948";
+  src: url(https://www.elflein.de/typo3conf/ext/cbf_template/Resources/Public/Frontend/assets/fonts/univers-light/univers-light.woff);
+}
+
+@font-face {
+  font-family: "Eurostile LT W04 Extend1459108";
+  src: url(https://www.elflein.de/typo3conf/ext/cbf_template/Resources/Public/Frontend/assets/fonts/eurostile-extended/eurostile-extended.woff);
+}
+
 * {
   margin: 0px;
   padding: 0px;
+}
+
+header {
+  background-color: $green-color;
+  height: 570px;
+  font-family: "Eurostile LT W04 Bold E1459110";
+
+  .elflein-logo {
+    width: 500px;
+  }
+}
+
+section {
+  .card {
+    border: 2px solid $orange-color;
+    background-color: $orange-color;
+    color: white;
+  }
+
+  .icon-card {
+    background-color: white;
+    font-size: 2.5em;
+    line-height: 4.25rem;
+    color: $orange-color;
+    text-align: center;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    margin: 0.75rem auto 0rem auto;
+  }
+
+  .card-body {
+    text-align: center;
+    font-family: "Univers LT W04_45 Light1475948";
+
+    .card-title {
+      font-size: 1.80rem;
+      font-family: "Eurostile LT W04 Extend1459108";
+    }
+
+    .btn-primary {
+      background-color: $green-color;
+      border-color: $green-color;
+      font-family: "Eurostile LT W04 Extend1459108";
+    }
+  }
 }
