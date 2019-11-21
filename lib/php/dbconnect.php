@@ -1,10 +1,10 @@
 <?php
   // Verbindung mit dem Server
-  $connect = @mysqli_connect('127.0.0.1:8080', 'root', '', "test");
+  $connect = mysqli_connect('127.0.0.1:8080', 'root', '', "test");
 
   // Validierung
   if(!$connect){
-    echo "No se pudo conectar con el Servidor";
+    exit ("Verbindungsfehler: ".mysqli_connect_error());
   } else {
     $base = mysql_select_db('test');
     if (!$base) {
