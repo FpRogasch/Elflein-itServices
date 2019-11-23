@@ -5,11 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="pages.min.css"/>
     <title>Elflein - Inventory</title>
   </head>
   <body>
-    <form class="" action="../lib/php/connect.php" method="post">
-      
-    </form>
+    <header class="d-flex align-items-center justify-content-center flex-column">
+      <div class="elflein-logo">
+        <img class="img-fluid" src="../images/logo-elflein.png" alt="Logo Elflein">
+      </div>
+      <h1 class="text-white">Inventory</h1>
+    </header>
+
+    <div class="container">
+      <form class="" action="../lib/php/connect.php" method="post">
+        <label for="Categorie">What type of device do you want to register?</label>
+        <select name="Categorie" class="custom-select" id="CategorieSelect" required>
+          <option value="">Choose...</option>
+          <option value="Mobile">Mobile</option>
+          <option value="Computer">Computer</option>
+        </select>
+
+        <label for="Sub_categorie"></label>
+        <select name="Categorie" class="custom-select" id="CategorieSelect" required>
+          <option value="">Choose...</option>
+          <option value="Mobile">Samsung</option>
+          <option value="Computer">IPhone</option>
+        </select>
+      </form>
+    </div>
   </body>
 </html>

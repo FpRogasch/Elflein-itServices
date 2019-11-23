@@ -1,0 +1,12 @@
+@import "../lib/bootstrap/scss/bootstrap.css";
+@import "../lib/bootstrap/scss/bootstrap.scss";
+@import "../main.scss";
+
+header {
+  background-color: $orange-color;
+  height: 250px;
+
+  .elflein-logo{
+    width: 250px;
+  }
+}
