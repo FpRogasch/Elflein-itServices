@@ -16,22 +16,31 @@
       <h1 class="text-white">Inventory</h1>
     </header>
 
-    <div class="container">
-      <form class="" action="../lib/php/connect.php" method="post">
-        <label for="Categorie">What type of device do you want to register?</label>
-        <select name="Categorie" class="custom-select" id="CategorieSelect" required>
-          <option value="">Choose...</option>
-          <option value="Mobile">Mobile</option>
-          <option value="Computer">Computer</option>
-        </select>
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col-sm">
+          <h2>Registration</h2>
+          <form class="" action="../lib/php/connect.php" method="post">
+            <label for="Categorie">What type of device do you want to register?</label>
+            <select name="Categorie" class="custom-select" id="CategorieSelect" required>
+              <option value="">Choose...</option>
+              <option value="Mobile">Mobile</option>
+              <option value="Computer">Computer</option>
+            </select>
 
-        <label for="Sub_categorie"></label>
-        <select name="Categorie" class="custom-select" id="CategorieSelect" required>
-          <option value="">Choose...</option>
-          <option value="Mobile">Samsung</option>
-          <option value="Computer">IPhone</option>
-        </select>
-      </form>
+            <label for="Sub_categorie"></label>
+            <select name="Categorie" class="custom-select" id="CategorieSelect" required>
+              <option value="">Choose...</option>
+              <option value="Mobile">Samsung</option>
+              <option value="Computer">IPhone</option>
+            </select>
+          </form>
+        </div>
+        <div class="col-sm">
+          <h2>Preview</h2>
+          <p>These are the fields in the database</p>
+        </div>
+      </div>
     </div>
   </body>
 </html>
