@@ -13,7 +13,7 @@
   $description = ['Description'];
 
   $sql = "INSERT INTO inventory (Categorie, Sub_categorie, Model, Location, IMEI, Serie_number, Owner, Description)
-                        VALUES ('$categorie', '$sub_categorie', '$model', '$location', '$imei', '$serieNumber', '$description')";
+                        VALUES ('$categorie', '$sub_categorie', '$model', '$location', '$imei', '$serieNumber', '$owner', '$description')";
 
   if(!mysqli_query($connect,$sql)){
     echo "Not Inserted";
