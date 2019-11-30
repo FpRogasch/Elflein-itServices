@@ -10,7 +10,7 @@
     $conn = new mysqli('localhost', 'root', '', 'db_itservices');
 
     if(!$conn){
-      die('Connection Failed : '.$conn->connect_error);
+      die('Connection Failed : '. mysqli_connect_errno() .')'. mysqli_connect_error());
     }
     else {
       echo "Connect Successfully";
