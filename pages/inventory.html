@@ -9,10 +9,10 @@
     <title>Elflein - Inventory</title>
   </head>
   <body>
-    <header class="d-flex">
-      <div class="container justify-content-center align-item-center flex-column">
+    <header>
+      <div class="container d-flex justify-content-center align-item-center">
         <div class="row">
-          <div class="col">
+          <div class="col-3">
             <a href="../index.html"><button class="back">Back</button></a>
           </div>
           <div class="col-6">
@@ -21,124 +21,119 @@
             </div>
             <h1 class="text-white">Inventory</h1>
           </div>
-          <div class="col">
-
+          <div class="col-3">
           </div>
         </div>
       </div>
     </header>
+    <section>
+      <div class="container mt-4">
+        <form class="" action="../lib/php/inv_registration.php" method="post">
+          <!-- ID anzeigen oder schreiben um in der Datenbank zu suchen. -->
 
-    <div class="container mt-4">
-      <div class="row">
-        <div class="col-sm">
-          <h2 class="mb-3">Registration</h2>
-          <form class="" action="../lib/php/inv_registration.php" method="post">
-            <div class="container mt-3">
-              <p>What type of device do you want to register?</p>
+          <!-- Categorie field -->
+          <div class="container mt-3">
+            <p>What type of device do you want to register?</p>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="CategorieSelect">Categorie</label>
+              </div>
+              <select name="Categorie" class="custom-select" id="CategorieSelect" required>
+                <option value="">Choose...</option>
+                <option value="Mobile">Mobile</option>
+                <option value="Tablet">Tablet</option>
+                <option value="Computer">Computer</option>
+              </select>
+            </div>
+          </div>
+          <!-- "Mobile" Sub-categorie field -->
+          <div class="container mt-3">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="SubCategorieSelect">Sub-Categorie</label>
+              </div>
+              <select name="Sub_categorie" class="custom-select" id="SubCategorieSelect" required>
+                <option value="">Choose...</option>
+                <option value="Samsung">Samsung</option>
+                <option value="IPhone">IPhone</option>
+              </select>
+            </div>
+          </div>
+          <!-- "Mobile - Samsung" Model field -->
+          <div class="container mt-3">
+            <div class="form-group">
+              <label for="Model">Please enter the exact model of the device. <span class="text-muted">For example: SM-T365</span></label>
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                  <label class="input-group-text" for="CategorieSelect">Categorie</label>
+                  <span class="input-group-text" id="inputGroup-sizing-default">Model</span>
                 </div>
-                <select name="Categorie" class="custom-select" id="CategorieSelect" required>
-                  <option value="">Choose...</option>
-                  <option value="Mobile">Mobile</option>
-                  <option value="Tablet">Tablet</option>
-                  <option value="Computer">Computer</option>
-                </select>
+                <input type="text" name="Model" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
               </div>
-            </div>
-            <div class="container mt-3">
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <label class="input-group-text" for="SubCategorieSelect">Sub-Categorie</label>
-                </div>
-                <select name="Sub_categorie" class="custom-select" id="SubCategorieSelect" required>
-                  <option value="">Choose...</option>
-                  <option value="Samsung">Samsung</option>
-                  <option value="IPhone">IPhone</option>
-                </select>
-              </div>
-            </div>
-            <div class="container mt-3">
-              <div class="form-group">
-                <label for="Model">Please enter the exact model of the device. <span class="text-muted">For example: SM-T365</span></label>
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Model</span>
-                  </div>
-                  <input type="text" name="Model" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                </div>
-                <div class="invalid-feedback">Bitte geben Sie den Namen des PCs ein (4 Ziffern sind benötigt).</div>
-              </div>
-            </div>
-            <div class="container mt-3">
-              <p>Please choose the location of the device.</p>
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <label class="input-group-text" for="LocationSelect">Location</label>
-                </div>
-                <select name="Location" class="custom-select" id="LocationSelect" required>
-                  <option value="">Choose...</option>
-                  <option value="BAMC">Bamberg</option>
-                  <option value="BERC">Berbersdorf</option>
-                  <option value="BORC">Bor</option>
-                  <option value="CHOC">Chomutov</option>
-                  <option value="EPFC">Epfendorf</option>
-                  <option value="HERC">Hermsdorf</option>
-                  <option value="KIRC">Kirchdorf</option>
-                  <option value="LEGC">Legniza</option>
-                  <option value="LEIC">Leipzig</option>
-                  <option value="LEPC">Leipzig Porsche</option>
-                  <option value="NYRC">Nyrang</option>
-                  <option value="OELC">Oelsnitz</option>
-                  <option value="REGC">Regensburg</option>
-                  <option value="BOBC">Böblingen</option>
-                </select>
-              </div>
-              <div class="invalid-feedback">Bitte wählen Sie aus, an welchem Ort dieser Pc belegt werden soll.</div>
-            </div>
-            <div class="container mt-3">
-              <p>Please enter the full name of the person to whom the device will be assigned.</p>
-              <div class="form-group">
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Belong to...</span>
-                  </div>
-                  <input type="text" name="Owner" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                </div>
-                <div class="invalid-feedback">Bitte geben Sie den Namen des PCs ein (4 Ziffern sind benötigt).</div>
-              </div>
-            </div>
-            <div class="container mt-3">
-              <label for="Imei">IMEI</label>
-              <input type="text" name="Imei" class="form-control" id="colFormLabel" placeholder="Number">
               <div class="invalid-feedback">Bitte geben Sie den Namen des PCs ein (4 Ziffern sind benötigt).</div>
             </div>
-            <div class="container mt-3">
-              <label for="SerieNumber">SerieNummer</label>
-              <input type="text" name="SerieNumber" class="form-control" id="colFormLabel" placeholder="Number">
+          </div>
+          <div class="container mt-3">
+            <p>Please choose the location of the device.</p>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="LocationSelect">Location</label>
+              </div>
+              <select name="Location" class="custom-select" id="LocationSelect" required>
+                <option value="">Choose...</option>
+                <option value="BAMC">Bamberg</option>
+                <option value="BERC">Berbersdorf</option>
+                <option value="BORC">Bor</option>
+                <option value="CHOC">Chomutov</option>
+                <option value="EPFC">Epfendorf</option>
+                <option value="HERC">Hermsdorf</option>
+                <option value="KIRC">Kirchdorf</option>
+                <option value="LEGC">Legniza</option>
+                <option value="LEIC">Leipzig</option>
+                <option value="LEPC">Leipzig Porsche</option>
+                <option value="NYRC">Nyrang</option>
+                <option value="OELC">Oelsnitz</option>
+                <option value="REGC">Regensburg</option>
+                <option value="BOBC">Böblingen</option>
+              </select>
+            </div>
+            <div class="invalid-feedback">Bitte wählen Sie aus, an welchem Ort dieser Pc belegt werden soll.</div>
+          </div>
+          <div class="container mt-3">
+            <p>Please enter the full name of the person to whom the device will be assigned.</p>
+            <div class="form-group">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-default">Belong to...</span>
+                </div>
+                <input type="text" name="Owner" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+              </div>
               <div class="invalid-feedback">Bitte geben Sie den Namen des PCs ein (4 Ziffern sind benötigt).</div>
             </div>
-            <div class="container mt-3">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">Description</span>
-                </div>
-                <textarea name="Description" class="form-control" aria-label="With textarea"></textarea>
+          </div>
+          <div class="container mt-3">
+            <label for="Imei">IMEI</label>
+            <input type="text" name="Imei" class="form-control" id="colFormLabel" placeholder="Number">
+            <div class="invalid-feedback">Bitte geben Sie den Namen des PCs ein (4 Ziffern sind benötigt).</div>
+          </div>
+          <div class="container mt-3">
+            <label for="SerieNumber">SerieNummer</label>
+            <input type="text" name="SerieNumber" class="form-control" id="colFormLabel" placeholder="Number">
+            <div class="invalid-feedback">Bitte geben Sie den Namen des PCs ein (4 Ziffern sind benötigt).</div>
+          </div>
+          <div class="container mt-3">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Description</span>
               </div>
+              <textarea name="Description" class="form-control" aria-label="With textarea"></textarea>
             </div>
-            <div class="container mt-3">
-              <button type="submit" name="Submit">Save</button>
-            </div>
-          </form>
-        </div>
-        <div class="col-sm">
-          <h2 class="mb-3">Preview</h2>
-          <p>These are the data that will be stored in the database in their respective fields.</p>
-
-        </div>
+          </div>
+          <div class="container mt-3">
+            <button type="submit" name="Submit">Save</button>
+          </div>
+        </form>
       </div>
-    </div>
+    </section>
   </body>
   <!-- Scripts and jQuery-->
   <script type="text/javascript" src="../lib/jquery/jquery-3.4.1.js"></script>

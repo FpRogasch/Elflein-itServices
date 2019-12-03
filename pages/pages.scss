@@ -84,3 +84,9 @@ button {
     border-radius: 5px 0 0 5px;
   }
 }
+
+section {
+  &.input-group-prepend {
+    width: 200px;
+  }
+}
