@@ -6,9 +6,20 @@ header {
   background-color: $orange-color;
   height: 250px;
 
+  #header_container {
+    height: 100%;
+  }
+
+  #row_container{
+    height: 100%;
+  }
+
   .elflein-logo{
     width: 250px;
+    display: grid;
+    align-self: center;
   }
+
   a {
     &:hover{
       text-decoration: none;
@@ -82,11 +93,5 @@ button {
     left: 0;
     top: 0;
     border-radius: 5px 0 0 5px;
-  }
-}
-
-section {
-  &.input-group-prepend {
-    width: 200px;
   }
 }
