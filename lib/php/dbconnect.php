@@ -1,19 +1,21 @@
 <?php
   function OpenConnection(){
-    // Variables
-    $dbhost = "localhost";
-    $dbuser = "root";
-    $dbpass = "";
-    $dbname = "db_itservices";
+    // DB Details
+    $dbHost = "localhost";
+    $dbUsername = "root";
+    $dbPassword = "";
+    $dbName = "db_itservices";
 
     // Connection with the Server
-    $conn = new mysqli('localhost', 'root', '', 'db_itservices');
+    $conn = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
 
     if(!$conn){
       die('Connection Failed : '. mysqli_connect_errno() .')'. mysqli_connect_error());
     }
     else {
-      echo "Connect Successfully";
+      echo '<script>
+        alert("Successfully connected to the Database.");
+      </script>';
     }
 
     return $conn;
