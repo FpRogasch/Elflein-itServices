@@ -4,7 +4,7 @@
   $connect = OpenConnection();
 
   $categorie = $_POST['Categorie'];
-  $model = $_POST['Model'];
+  $model = $_POST['activeModel'];
   $location = $_POST['Location'];
   $owner = $_POST['Owner'];
   $imei = $_POST['Imei'];
@@ -15,12 +15,13 @@
                         VALUES ('$categorie', '$model', '$location', '$imei', '$serieNumber', '$owner', '$description')";
 
   if(!mysqli_query($connect,$sql)){
+    echo "</br>";
     echo "Not Inserted";
   }
   else {
     echo '<script>
       alert("record successfully inserted in the database");
-      window.history.go(-1);
+      window.location.href = "../../index.html";
     </script>';
   }
 

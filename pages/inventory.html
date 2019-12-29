@@ -38,23 +38,24 @@
             <p>What type of device do you want to register?</p>
             <div class="input-group mb-3">
               <div class="input-group-prepend">
-                <label class="input-group-text" for="CategorieSelect">Categorie</label>
+                <label class="input-group-text" for="categorieSelect">Categorie</label>
               </div>
-              <select name="Categorie" class="custom-select" id="CategorieSelect" required>
+              <select name="Categorie" class="custom-select" id="categorieSelect" required>
                 <option value="">Choose...</option>
                 <option value="Mobile">Mobile</option>
                 <option value="Tablet">Tablet</option>
                 <option value="Computer">Computer</option>
+                <option value="Notebook">Notebook</option>
               </select>
             </div>
           </div>
           <!-- "Mobile" Model field -->
-          <div class="container mt-3">
+          <div class="container mt-3 models" id="Mobile_modelS" style="display: none;">
             <div class="input-group mb-3">
               <div class="input-group-prepend">
                 <label class="input-group-text" for="ModelSelect">Model</label>
               </div>
-              <select name="Model" class="custom-select" id="ModelSelect" required>
+              <select class="custom-select" id="mobileModelSelect">
                 <option value="">Choose...</option>
                 <option value="Samsung Galaxy J5">Samsung Galaxy J5</option>
                 <option value="Samsung Galaxy A20">Samsung Galaxy A20</option>
@@ -69,6 +70,46 @@
               </select>
             </div>
           </div>
+          <!-- "Tablet" Model field -->
+          <div class="container mt-3 models" id="Tablet_modelS" style="display: none;">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="ModelSelect">Model</label>
+              </div>
+              <select class="custom-select" id="tabletModelSelect">
+                <option value="">Choose...</option>
+                <option value="SM-T311">SM-T311</option>
+                <option value="SM-T315">SM-T315</option>
+                <option value="SM-T365">SM-T365</option>
+                <option value="SM-T395">SM-T395</option>
+              </select>
+            </div>
+          </div>
+          <!-- "Computer" Model field -->
+          <div class="container mt-3 models" id="Computer_modelS" style="display: none;">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="ModelSelect">Model</label>
+              </div>
+              <select class="custom-select" id="computerModelSelect">
+                <option value="">Choose...</option>
+                <option value="Terra">Terra</option>
+              </select>
+            </div>
+          </div>
+          <!-- "Notebook" Model field -->
+          <div class="container mt-3 models" id="Notebook_modelS" style="display: none;">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="ModelSelect">Model</label>
+              </div>
+              <select class="custom-select" id="notebookModelSelect">
+                <option value="">Choose...</option>
+                <option value="HP ProBook 650 G4">HP ProBook 650 G4</option>
+                <option value="Microsoft Surface Pro 6">Microsoft Surface Pro 6</option>
+              </select>
+            </div>
+          </div>
           <!-- Location field -->
           <div class="container mt-3">
             <p>Please choose the location of the device.</p>
@@ -76,8 +117,9 @@
               <div class="input-group-prepend">
                 <label class="input-group-text" for="LocationSelect">Location</label>
               </div>
-              <select name="Location" class="custom-select" id="LocationSelect" required>
+              <select name="Location" class="custom-select" id="LocationSelect">
                 <option value="">Choose...</option>
+                <option value="Bamberg-IT">Bamberg-IT</option>
                 <option value="Bamberg">Bamberg</option>
                 <option value="Berbersdorf">Berbersdorf</option>
                 <option value="Bor">Bor</option>
@@ -147,10 +189,12 @@
             <button type="submit" name="Submit">Save</button>
           </div>
         </form>
+        <button type="button" name="btn btn-primary btn-lg btn-block"><a style="color: white;" href="../lib/php/inv_db_view.php">Consulting the Data</a></button>
       </div>
     </section>
   </body>
   <!-- Scripts and jQuery-->
   <script type="text/javascript" src="../lib/jquery/jquery-3.4.1.js"></script>
   <script type="text/javascript" src="../lib/jquery/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="../lib/js/inv_model_dinamic.js"></script>
 </html>
